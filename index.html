@@ -1,41 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Secret Agent</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <meta name="generator" content="Scirra Construct">
+  <title>Secret Agent</title>
 
-<meta name="generator" content="Scirra Construct">
+  <!-- Manifest and Icons -->
+  <link rel="manifest" href="appmanifest.json">
+  <link rel="apple-touch-icon" sizes="128x128" href="icons/icon-128.png">
+  <link rel="apple-touch-icon" sizes="256x256" href="icons/icon-256.png">
+  <link rel="apple-touch-icon" sizes="512x512" href="icons/icon-512.png">
+  <link rel="icon" type="image/png" href="icons/icon-512.png">
 
-	<link rel="manifest" href="appmanifest.json">
-	<link rel="apple-touch-icon" sizes="128x128" href="icons/icon-128.png">
-	<link rel="apple-touch-icon" sizes="256x256" href="icons/icon-256.png">
-	<link rel="apple-touch-icon" sizes="512x512" href="icons/icon-512.png">
-	<link rel="icon" type="image/png" href="icons/icon-512.png">
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Ensure full-screen responsiveness */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #000; /* Set a background color */
+    }
 
-<link rel="stylesheet" href="style.css">
+    /* Fallback for noscript */
+    #notSupportedWrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      text-align: center;
+      background-color: #333;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
 
+    #notSupportedTitle {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
 
+    .notSupportedMessage {
+      font-size: 18px;
+      max-width: 90%;
+    }
+  </style>
 </head>
 <body>
 
 <script>
-if (location.protocol.substr(0, 4) === "file")
-{
-	alert("Web exports won't work until you upload them. (When running on the file: protocol, browsers block many features from working for security reasons.)");
-}
+  if (location.protocol.substr(0, 4) === "file") {
+    alert("Web exports won't work until you upload them. (When running on the file: protocol, browsers block many features from working for security reasons.)");
+  }
 </script>
 
-	<noscript>
-		<div id="notSupportedWrap">
-			<h2 id="notSupportedTitle">This content requires JavaScript</h2>
-			<p class="notSupportedMessage">JavaScript appears to be disabled. Please enable it to view this content.</p>
-		</div>
-	</noscript>
-	<script src="scripts/supportcheck.js"></script>
-	<script src="scripts/offlineclient.js" type="module"></script>
-	<script src="scripts/main.js" type="module"></script>
-	<script src="scripts/register-sw.js" type="module"></script>
+<noscript>
+  <div id="notSupportedWrap">
+    <h2 id="notSupportedTitle">This content requires JavaScript</h2>
+    <p class="notSupportedMessage">JavaScript appears to be disabled. Please enable it to view this content.</p>
+  </div>
+</noscript>
+
+<!-- Scripts -->
+<script src="scripts/supportcheck.js"></script>
+<script src="scripts/offlineclient.js" type="module"></script>
+<script src="scripts/main.js" type="module"></script>
+<script src="scripts/register-sw.js" type="module"></script>
 
 </body>
 </html>
